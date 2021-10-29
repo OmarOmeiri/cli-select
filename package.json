@@ -1,10 +1,13 @@
 {
-  "name": "cli-select",
-  "version": "1.0.2",
+  "name": "@omaromeiri/cli-select",
+  "version": "1.0.1",
   "description": "cli select tool",
   "main": "dist/index.js",
   "author": "Omar Omeiri",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@OmarOmeiri"
+  },
   "homepage": "https://github.com/OmarOmeiri/cli-select.git",
   "repository": {
     "type": "git",
