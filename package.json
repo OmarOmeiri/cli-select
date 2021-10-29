@@ -1,6 +1,6 @@
 {
   "name": "cli-select",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "cli select tool",
   "main": "dist/index.js",
   "author": "Omar Omeiri",
