@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+      "target": "ESNEXT",
+      "module": "commonjs",
+      "lib": [
+          "esnext",
+          "dom"
+      ],
+      "declaration": true,
+      "sourceMap": false,
+      "emitDeclarationOnly": false,
+      "outDir": "./dist",
+      "strict": true,
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "traceResolution": false,
+      "forceConsistentCasingInFileNames": true,
+      "resolveJsonModule": true
+  },
+}

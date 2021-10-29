@@ -1,0 +1,33 @@
+{
+  "name": "cli-select",
+  "version": "1.0.0",
+  "description": "cli select tool",
+  "main": "dist/index.js",
+  "author": "Omar Omeiri",
+  "license": "MIT",
+  "homepage": "https://github.com/OmarOmeiri/cli-select.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OmarOmeiri/cli-select.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OmarOmeiri/cli-select/issues"
+  },
+  "scripts": {
+    "build": "sh ./utils/build.sh",
+    "bump": "node ./utils/bumpVersion.js",
+    "pub": "sh ./utils/publish.sh"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.6",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "typescript": "^4.3.2"
+  }
+}
