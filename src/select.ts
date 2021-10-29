@@ -32,8 +32,8 @@ type ctor = {
 
 class Select {
   private question: ctor['question']
-  private options: ctor['options']
-  private answers: ctor['answers']
+  options: ctor['options']
+  answers: ctor['answers']
   private pointer: ctor['pointer']
   private optColor: ctor['optColor']
   private textColor: ctor['textColor']
@@ -73,10 +73,12 @@ class Select {
   }
 
   start(): void {
+    rdl.cursorTo(process.stdout, 0, 0);
+    rdl.clearScreenDown(process.stdout);
     stdout.write(this.color(`${this.question}\n`, this.textColor));
     for (let opt = 0; opt < this.options.length; opt++) {
       this.options[opt] = `${this.pointer} ${this.options[opt]}`;
-      if (opt === this.options.length - 1) {
+      if (opt === 0) {
         this.input = this.options.length - 1;
         this.options[opt] += '\n';
         stdout.write(this.color(this.options[opt], this.optColor));
@@ -84,7 +86,7 @@ class Select {
         this.options[opt] += '\n';
         stdout.write(this.color(this.options[opt], this.textColor));
       }
-      this.cursorLocs.y = opt + 1;
+      this.cursorLocs.y = 1;
     }
 
     stdin.setRawMode(true);
@@ -116,9 +118,17 @@ class Select {
     stdin.setRawMode(false);
     stdin.pause();
     this.showCursor();
-    rdl.cursorTo(stdout, 0, this.options.length + 1);
+    // rdl.cursorTo(stdout, 0, this.options.length + 1);
+
+    rdl.cursorTo(process.stdout, 0, 0);
+    rdl.clearScreenDown(process.stdout);
     // @ts-ignore
-    this.cb(this.answers[this.input]);
+    const ans = this.answers[this.input] as string;
+    this.answers = [];
+    this.options = [];
+    this.input = undefined;
+    // @ts-ignore
+    this.cb(ans);
   }
 
   ctrlc(): void {
